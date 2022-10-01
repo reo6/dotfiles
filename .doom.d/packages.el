@@ -53,3 +53,4 @@
 (package! haskell-mode)
 (package! lsp-haskell)
 (package! elcord)
+(package! beacon)
