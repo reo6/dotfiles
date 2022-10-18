@@ -101,6 +101,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 path+=('/home/reo/.emacs.d/bin/')
+path+=('/opt/cmdline-tools/bin/')
 
 
 
