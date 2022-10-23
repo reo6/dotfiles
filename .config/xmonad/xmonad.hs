@@ -6,7 +6,7 @@ import XMonad.Hooks.StatusBar.PP
 import XMonad.Hooks.EwmhDesktops
 
 main = do
-  xmonad . ewmhFullscreen . ewmh  $ def
+  xmonad . ewmhFullscreen . ewmh . xmobarProp $ def
         { terminal           = myTerminal
         , modMask            = myModMask
         , borderWidth        = myBorderWidth
