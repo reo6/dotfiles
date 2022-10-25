@@ -15,15 +15,8 @@ main = do
         , normalBorderColor  = myNormalBorderColor
         , startupHook        = myStartupHook
         }
-      `additionalKeysP`
-        [  ("M-e", spawn myEmacs)
-        ,  ("M-f", spawn myBrowser)
-        ,  ("<XF86MonBrightnessUp>", spawn "brightnessctl s +2%")
-        ,  ("<XF86MonBrightnessDown>", spawn "brightnessctl s 2%-")
-        ,  ("<XF86AudioRaiseVolume>", spawn "amixer -q sset Master 3%+")
-        ,  ("<XF86AudioLowerVolume>", spawn "amixer -q sset Master 3%-")
-        ,  ("M-<Return>", spawn myTerminal)
-        ]
+      `additionalKeysP` myKeybindings
+
 
 myTerminal           = "alacritty"
 myModMask            = mod4Mask
@@ -38,3 +31,13 @@ myStartupHook :: X ()
 myStartupHook = do
   spawnOnce "/usr/bin/xmobar"
   spawn $ "feh --bg-scale " ++ myWallpaper
+
+myKeybindings :: [(String, X())]
+myKeybindings = [  ("M-e", spawn myEmacs)
+                ,  ("M-f", spawn myBrowser)
+                ,  ("<XF86MonBrightnessUp>", spawn "brightnessctl s +2%")
+                ,  ("<XF86MonBrightnessDown>", spawn "brightnessctl s 2%-")
+                ,  ("<XF86AudioRaiseVolume>", spawn "amixer -q sset Master 3%+")
+                ,  ("<XF86AudioLowerVolume>", spawn "amixer -q sset Master 3%-")
+                ,  ("M-<Return>", spawn myTerminal)
+                ]
