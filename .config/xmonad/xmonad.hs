@@ -32,7 +32,9 @@ myEmacs = "emacsclient -c -a 'emacs' "
 myBrowser = "firefox"
 myFocusedBorderColor = "#749F82"
 myNormalBorderColor = "#425F57"
+myWallpaper = "/home/reo/Videos/wp-hs.png"
 
 myStartupHook :: X ()
 myStartupHook = do
   spawnOnce "/usr/bin/xmobar"
+  spawn $ "feh --bg-scale " ++ myWallpaper
