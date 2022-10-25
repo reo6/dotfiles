@@ -17,7 +17,7 @@ main = do
         }
       `additionalKeysP`
         [  ("M-e", spawn myEmacs)
-        ,  ("M-v", spawn myBrowser)
+        ,  ("M-f", spawn myBrowser)
         ,  ("<XF86MonBrightnessUp>", spawn "brightnessctl s +2%")
         ,  ("<XF86MonBrightnessDown>", spawn "brightnessctl s 2%-")
         ,  ("<XF86AudioRaiseVolume>", spawn "amixer -q sset Master 3%+")
