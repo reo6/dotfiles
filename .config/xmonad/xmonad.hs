@@ -25,14 +25,14 @@ main = do
         ,  ("M-<Return>", spawn myTerminal)
         ]
 
-myTerminal = "alacritty"
-myModMask = mod4Mask
-myBorderWidth = 5
-myEmacs = "emacsclient -c -a 'emacs' "
-myBrowser = "firefox"
+myTerminal           = "alacritty"
+myModMask            = mod4Mask
+myBorderWidth        = 5
+myEmacs              = "emacsclient -c -a 'emacs' "
+myBrowser            = "firefox"
 myFocusedBorderColor = "#749F82"
-myNormalBorderColor = "#425F57"
-myWallpaper = "/home/reo/Videos/wp-hs.png"
+myNormalBorderColor  = "#425F57"
+myWallpaper          = "/home/reo/Videos/wp-hs.png"
 
 myStartupHook :: X ()
 myStartupHook = do
