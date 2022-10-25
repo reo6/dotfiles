@@ -35,8 +35,8 @@ myStartupHook = do
 myKeybindings :: [(String, X())]
 myKeybindings = [  ("M-e", spawn myEmacs)
                 ,  ("M-f", spawn myBrowser)
-                ,  ("<XF86MonBrightnessUp>", spawn "brightnessctl s +2%")
-                ,  ("<XF86MonBrightnessDown>", spawn "brightnessctl s 2%-")
+                ,  ("<XF86MonBrightnessUp>", spawn "brightnessctl s +4%")
+                ,  ("<XF86MonBrightnessDown>", spawn "brightnessctl s 4%-")
                 ,  ("<XF86AudioRaiseVolume>", spawn "amixer -q sset Master 3%+")
                 ,  ("<XF86AudioLowerVolume>", spawn "amixer -q sset Master 3%-")
                 ,  ("M-<Return>", spawn myTerminal)
