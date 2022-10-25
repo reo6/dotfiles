@@ -35,4 +35,4 @@ myNormalBorderColor = "#425F57"
 
 myStartupHook :: X ()
 myStartupHook = do
-  spawnOnce "xmobar"
+  spawnOnce "/usr/bin/xmobar"
