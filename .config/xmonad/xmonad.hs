@@ -13,7 +13,7 @@ main = do
         , borderWidth        = myBorderWidth
         , focusedBorderColor = myFocusedBorderColor
         , normalBorderColor  = myNormalBorderColor
-        , startupHook      = myStartupHook
+        , startupHook        = myStartupHook
         }
       `additionalKeysP`
         [  ("M-e", spawn myEmacs)
