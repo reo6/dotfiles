@@ -4,6 +4,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.StatusBar
 import XMonad.Hooks.StatusBar.PP
 import XMonad.Hooks.EwmhDesktops
+import XMonad.Util.SpawnOnce (spawnOnce)
 
 main = do
   xmonad . ewmhFullscreen . ewmh . xmobarProp $ def
@@ -12,6 +13,7 @@ main = do
         , borderWidth        = myBorderWidth
         , focusedBorderColor = myFocusedBorderColor
         , normalBorderColor  = myNormalBorderColor
+        , startupHook      = myStartupHook
         }
       `additionalKeysP`
         [  ("M-e", spawn myEmacs)
@@ -30,3 +32,7 @@ myEmacs = "emacsclient -c -a 'emacs' "
 myBrowser = "firefox"
 myFocusedBorderColor = "#749F82"
 myNormalBorderColor = "#425F57"
+
+myStartupHook :: X ()
+myStartupHook = do
+  spawnOnce "xmobar"
