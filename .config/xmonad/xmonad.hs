@@ -10,8 +10,8 @@ main = do
         { terminal           = myTerminal
         , modMask            = myModMask
         , borderWidth        = myBorderWidth
-        , focusedBorderColor = "#749F82"
-        , normalBorderColor  = "#425F57"
+        , focusedBorderColor = myFocusedBorderColor
+        , normalBorderColor  = myNormalBorderColor
         }
       `additionalKeysP`
         [  ("M-e", spawn myEmacs)
@@ -28,3 +28,5 @@ myModMask = mod4Mask
 myBorderWidth = 5
 myEmacs = "emacsclient -c -a 'emacs' "
 myBrowser = "firefox"
+myFocusedBorderColor = "#749F82"
+myNormalBorderColor = "#425F57"
