@@ -1,3 +1,8 @@
 Config { bgColor  = "#425F57"
        , fgColor  = "#CFFF8D"
-       , template = "%XMonadPropRead%"}
+       , font     = "xft:iosevka-9"
+       , commands = [ Run Date "%a %Y-%m-%d <fc=#8be9fd>%H:%M</fc>" "date" 10
+                    , Run XMonadLog
+                    ]
+       , alignSep = "}{"
+       , template = "  %XMonadLog% }{ %date%  "}
