@@ -28,6 +28,7 @@ myBorderWidth        = 5
 myEmacs              = "emacsclient -c -a 'emacs' "
 myBrowser            = "firefox"
 myTheme              = naturalGreenTheme
+myLauncher           = "rofi -show run"
 
 myStartupHook :: X ()
 myStartupHook = do
@@ -43,4 +44,5 @@ myKeybindings = [  ("M-e", spawn myEmacs)
                 ,  ("<XF86AudioLowerVolume>", spawn "amixer -q sset Master 3%-")
                 ,  ("M-<Return>", spawn myTerminal)
                 ,  ("M-q", spawn "xmonad --recompile; killall xmobar; xmonad --restart")
+                ,  ("M-d", spawn myLauncher)
                 ]
