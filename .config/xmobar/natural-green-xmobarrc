@@ -1,0 +1,3 @@
+Config { bgColor  = "#425F57"
+       , fgColor  = "#CFFF8D"
+       , template = "%XMonadPropRead%"}

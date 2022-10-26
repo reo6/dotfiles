@@ -11,8 +11,8 @@ main = do
         { terminal           = myTerminal
         , modMask            = myModMask
         , borderWidth        = myBorderWidth
-        , focusedBorderColor = myFocusedBorderColor
-        , normalBorderColor  = myNormalBorderColor
+        , focusedBorderColor = themeFocusedBorderColor myTheme
+        , normalBorderColor  = themeBorderColor myTheme
         , startupHook        = myStartupHook
         }
       `additionalKeysP` myKeybindings
@@ -23,14 +23,12 @@ myModMask            = mod4Mask
 myBorderWidth        = 5
 myEmacs              = "emacsclient -c -a 'emacs' "
 myBrowser            = "firefox"
-myFocusedBorderColor = "#749F82"
-myNormalBorderColor  = "#425F57"
-myWallpaper          = "/home/reo/Videos/wp-hs.png"
+myTheme              = naturalGreenTheme
 
 myStartupHook :: X ()
 myStartupHook = do
-  spawnOnce "/usr/bin/xmobar"
-  spawn $ "feh --bg-scale " ++ myWallpaper
+  spawnOnce $ "/usr/bin/xmobar " ++ themeBarConfig myTheme
+  spawn $ "feh --bg-scale " ++ themeWallpaper myTheme
 
 myKeybindings :: [(String, X())]
 myKeybindings = [  ("M-e", spawn myEmacs)
@@ -41,3 +39,19 @@ myKeybindings = [  ("M-e", spawn myEmacs)
                 ,  ("<XF86AudioLowerVolume>", spawn "amixer -q sset Master 3%-")
                 ,  ("M-<Return>", spawn myTerminal)
                 ]
+
+-- Themes
+data Theme = Theme { themeName :: String
+                   , themeBarConfig :: String
+                   , themeBorderColor :: String
+                   , themeFocusedBorderColor :: String
+                   , themeWallpaper :: String
+                   }
+
+naturalGreenTheme :: Theme
+naturalGreenTheme = Theme { themeName               = "Natural Green"
+                          , themeBarConfig          = "~/.config/xmobar/natural-green-xmobarrc"
+                          , themeBorderColor        = "#425F57"
+                          , themeFocusedBorderColor = "#749F82"
+                          , themeWallpaper          = "~/Wallpapers/wp-hs.png"
+                          }
