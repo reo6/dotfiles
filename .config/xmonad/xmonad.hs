@@ -42,4 +42,5 @@ myKeybindings = [  ("M-e", spawn myEmacs)
                 ,  ("<XF86AudioRaiseVolume>", spawn "amixer -q sset Master 3%+")
                 ,  ("<XF86AudioLowerVolume>", spawn "amixer -q sset Master 3%-")
                 ,  ("M-<Return>", spawn myTerminal)
+                ,  ("M-q", spawn "xmonad --recompile; killall xmobar; xmonad --restart")
                 ]
