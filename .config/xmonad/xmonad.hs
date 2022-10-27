@@ -5,6 +5,7 @@ import XMonad.Hooks.StatusBar
 import XMonad.Hooks.StatusBar.PP
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Util.SpawnOnce (spawnOnce)
+import XMonad.Layout.Spacing
 
 import Theme
 import NaturalGreenTheme
@@ -19,6 +20,7 @@ myConfig =  def { terminal           = myTerminal
                 , focusedBorderColor = themeFocusedBorderColor myTheme
                 , normalBorderColor  = themeBorderColor myTheme
                 , startupHook        = myStartupHook
+                , layoutHook         = spacingWithEdge myGapSize $ myLayoutHook
                 }
                 `additionalKeysP` myKeybindings
 
@@ -29,6 +31,7 @@ myEmacs              = "emacsclient -c -a 'emacs' "
 myBrowser            = "firefox"
 myTheme              = naturalGreenTheme
 myLauncher           = "rofi -show run"
+myGapSize            = 10
 
 myStartupHook :: X ()
 myStartupHook = do
@@ -46,3 +49,10 @@ myKeybindings = [  ("M-e", spawn myEmacs)
                 ,  ("M-q", spawn "xmonad --recompile; killall xmobar; xmonad --restart")
                 ,  ("M-d", spawn myLauncher)
                 ]
+
+myLayoutHook = tiled ||| Mirror tiled ||| Full
+  where
+     tiled   = Tall nmaster delta ratio
+     nmaster = 1
+     ratio   = 1/2
+     delta   = 3/100
