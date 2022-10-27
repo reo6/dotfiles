@@ -31,7 +31,7 @@ myEmacs              = "emacsclient -c -a 'emacs' "
 myBrowser            = "firefox"
 myTheme              = naturalGreenTheme
 myLauncher           = "rofi -show run"
-myGapSize            = 10
+myGapSize            = 13
 
 myStartupHook :: X ()
 myStartupHook = do
