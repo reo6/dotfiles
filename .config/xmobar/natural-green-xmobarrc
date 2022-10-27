@@ -6,4 +6,4 @@ Config { bgColor  = "#425F57"
                     , Run XMonadLog
                     ]
        , alignSep = "}{"
-       , template = "    %XMonadLog% }{ %date%  "}
+       , template = "    %XMonadLog% }{ %date%                   "}
