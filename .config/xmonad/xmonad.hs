@@ -39,6 +39,7 @@ myStartupHook = do
   spawn $ "feh --bg-scale " ++ themeWallpaper myTheme
   spawn   "xscreensaver -no-splash"
   spawn   "trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent true --tint 0x5f5f5f --height 31"
+  spawn   "emacs --daemon"
 
 myKeybindings :: [(String, X())]
 myKeybindings = [  ("M-e", spawn myEmacs)
