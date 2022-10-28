@@ -34,7 +34,7 @@
 ;; `load-theme' function. This is the default:
 (load "doom-themes")
 
-;; doom-henna, doom-nord, doom-one
+;; doom-henna, doom-nord, doom-one, doom-opera, doom-miramare
 (setq doom-theme 'doom-ayu-dark)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
