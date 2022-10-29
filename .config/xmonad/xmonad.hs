@@ -30,7 +30,7 @@ myBorderWidth        = 5
 myEmacs              = "emacsclient -c -a 'emacs' "
 myBrowser            = "firefox"
 myTheme              = naturalGreenTheme
-myLauncher           = "rofi -show run"
+myLauncher           = "rofi -show drun"
 myGapSize            = 13
 
 myStartupHook :: X ()
