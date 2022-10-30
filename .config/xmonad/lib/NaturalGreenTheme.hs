@@ -12,6 +12,6 @@ naturalGreenTheme = Theme { themeName               = "Natural Green"
                           , themeBarConfig          = "~/.config/xmobar/natural-green-xmobarrc"
                           , themeBorderColor        = "#425F57"
                           , themeFocusedBorderColor = "#749F82"
-                          , themeWallpaper          = "~/Wallpapers/wp-hs.png"
+                          , themeWallpaper          = "/usr/share/backgrounds/gnome/brush-strokes-d.jpg"
                           , themeXmobarPP           = naturalGreenXmobarPP
                           }
