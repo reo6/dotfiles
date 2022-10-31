@@ -35,7 +35,7 @@
 (load "doom-themes")
 
 ;; doom-henna, doom-nord, doom-one, doom-opera, doom-miramare
-(setq doom-theme 'doom-ayu-dark)
+(setq doom-theme 'doom-old-hope)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
