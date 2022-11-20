@@ -105,4 +105,6 @@ path+=('/opt/cmdline-tools/bin/')
 
 
 
+#[ -f "/home/reo/.ghcup/env" ] && source "/home/reo/.ghcup/env" # ghcup-env
+
 [ -f "/home/reo/.ghcup/env" ] && source "/home/reo/.ghcup/env" # ghcup-env
