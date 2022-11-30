@@ -49,6 +49,7 @@
 
 (beacon-mode 1)
 (good-scroll-mode 1)
+(elcord-mode 1)
 
 (custom-set-variables
  '(initial-frame-alist (quote ((fullscreen . maximized))))
