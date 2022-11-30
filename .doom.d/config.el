@@ -49,7 +49,9 @@
 
 (beacon-mode 1)
 (good-scroll-mode 1)
-(elcord-mode 1)
+(elcord-mode 1) ;; Magit will use the name "--global" if you just forget to
+                ;; set your git name and mail, so I set them up and will push this change
+                ;; as a commit. Pretend you didn't see this.
 
 (custom-set-variables
  '(initial-frame-alist (quote ((fullscreen . maximized))))
