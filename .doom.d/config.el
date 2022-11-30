@@ -53,6 +53,7 @@
                 ;; set your git name and mail, so I set them up and will push this change
                 ;; as a commit. Pretend you didn't see this.
                 ;; Edit: It just didn't work. I'll commit this one using git. Still not here.
+                ;; Edit2: ...
 
 (custom-set-variables
  '(initial-frame-alist (quote ((fullscreen . maximized))))
