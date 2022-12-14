@@ -55,3 +55,6 @@
 (package! elcord)
 (package! beacon)
 (package! good-scroll)
+(package! sublime-themes)
+(package! color-theme-sanityinc-tomorrow)
+(package! jazz-theme)
