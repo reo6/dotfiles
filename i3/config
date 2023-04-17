@@ -59,6 +59,8 @@ bindsym $mod+Return exec alacritty
 
 # Start emacs
 bindsym $mod+m exec emacsclient -c -a 'emacs'
+# Start firefox
+bindsym $mod+f exec firefox
 
 # kill focused window
 bindsym $mod+Shift+q kill
