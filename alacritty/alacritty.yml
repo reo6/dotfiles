@@ -876,3 +876,30 @@ font:
 
   # Print all received window events.
   #print_events: false
+# BEGIN ACE
+colors:
+  primary:
+    background: '#20221b'
+    foreground: '#f3e5c6'
+  cursor:
+    text:       '#20221b'
+    cursor:     '#f3e5c6'
+  normal:
+    black:      '#20221b'
+    red:        '#595960'
+    green:      '#8F613D'
+    yellow:     '#967159'
+    blue:       '#6E816B'
+    magenta:    '#C3986E'
+    cyan:       '#B29F8D'
+    white:      '#f3e5c6'
+  bright:
+    black:      '#aaa08a'
+    red:        '#595960'
+    green:      '#8F613D'
+    yellow:     '#967159'
+    blue:       '#6E816B'
+    magenta:    '#C3986E'
+    cyan:       '#B29F8D'
+    white:      '#f3e5c6'
+# END ACE
