@@ -5,7 +5,7 @@
 (load "doom-themes")
 
 ;; doom-henna, doom-nord, doom-one, doom-opera, doom-miramare, doom-manegarm
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-lantern)
 
 (setq display-line-numbers-type 'relative)
 
