@@ -65,6 +65,7 @@ bindsym $mod+m exec emacsclient -c -a 'emacs'
 # Start firefox
 bindsym $mod+f exec firefox
 
+bindsym --release $mod+s exec scrot -s -e 'xclip -selection clipboard -t image/png -i $f'
 bindsym $mod+Shift+p exec scrcpy
 # kill focused window
 bindsym $mod+Shift+q kill
