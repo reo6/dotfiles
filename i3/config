@@ -40,6 +40,7 @@ exec --no-startup-id dunst
 exec --no-startup-id feh --bg-scale /home/reo/Pictures/wallpapers/default.png
 exec --no-startup-id /usr/bin/emacs --daemon
 
+exec --no-startup-id feh --bg-scale /home/reo/.wallpaper
 exec --no-startup-id xinput set-prop "ELAN0709:00 04F3:30A0 Touchpad" "libinput Tapping Enabled" 1
 exec --no-startup-id xinput set-prop "ELAN0709:00 04F3:30A0 Touchpad" "libinput Natural Scrolling Enabled" 1
 # Use pactl to adjust volume in PulseAudio.
