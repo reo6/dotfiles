@@ -215,3 +215,6 @@ focus_follows_mouse yes
 
 # xset key hold speed
 exec --no-startup-id "xset r rate 350 30"
+
+# Caps lock is control
+exec --no-startup-id setxkbmap -option "caps:ctrl_modifier"
