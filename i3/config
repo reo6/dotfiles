@@ -39,7 +39,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 10%-
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 bindsym $mod+f exec firefox
 
@@ -51,7 +51,7 @@ bindsym $mod+Shift+p exec scrcpy
 bindsym $mod+Shift+q kill
 
 #bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#005577' -sf '#EEEEEE' -fn 'monospace-10'"
-bindsym $mod+d exec --no-startup-id "/home/reo/.config/polybar/grayblocks/scripts/launcher.sh"
+bindsym $mod+d exec --no-startup-id "/home/reo/.config/polybar/shades/scripts/launcher.sh"
 
 # change focus
 bindsym $mod+h focus left
@@ -149,8 +149,8 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Shift+e exec "/home/reo/.config/polybar/grayblocks/scripts/powermenu.sh"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you want to exit i3?' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "/home/reo/.config/polybar/shades/scripts/powermenu.sh"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -183,31 +183,6 @@ for_window [class="^.*"] border pixel 0
 gaps inner 10
 gaps outer 5
 
-# class                 border  bground text    indicator child_border
-client.focused          #83CAFA #51A2DA #FFFFFF #83CAFA   #51A2DA
-client.focused_inactive #8C8C8C #4C4C4C #FFFFFF #4C4C4C   #8C8C8C
-client.unfocused        #4C4C4C #222222 #888888 #292D2E   #222222
-client.urgent           #EC69A0 #DB3279 #FFFFFF #DB3279   #DB3279
-client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
-
-client.background       #FFFFFF
-
-exec --no-startup-id /home/reo/.config/polybar/launch.sh --grayblocks
-
-# Pywal
-set_from_resource $fg i3wm.color7 #f0f0f1
-set_from_resource $bg i3wm.color8 #f0f0f0
-
-# class                 border  backgr. text indicator child_border
-client.focused          $bg     $bg     $fg  $bg       $bg
-client.focused_inactive $bg     $bg     $fg  $bg       $bg
-client.unfocused        $bg     $bg     $fg  $bg       $bg
-client.urgent           $bg     $bg     $fg  $bg       $bg
-client.placeholder      $bg     $bg     $fg  $bg       $bg
-
-client.background       $bg
-
-
 
 bindsym $mod+Shift+s sticky toggle
 for_window [class="Firefox"] title_format "Mozilla Firefox"
@@ -218,3 +193,8 @@ exec --no-startup-id "xset r rate 350 30"
 
 # Caps lock is control
 exec --no-startup-id setxkbmap -option "caps:ctrl_modifier"
+
+#bar {
+#        status_command i3status
+#}
+exec --no-startup-id /home/reo/.config/polybar/shades/launch.sh
