@@ -1,5 +1,5 @@
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+(setq user-full-name "R. Emre (reo)"
+      user-mail-address "ramazanemre@protonmail.com")
 
 
 (load "doom-themes")
