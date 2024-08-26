@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Auto-detect the directory where the script is located
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+declare -A DIRS
+DIRS["alacritty"]="$HOME/.config/alacritty"
+DIRS["doom"]="$HOME/.config/doom"
+DIRS["i3"]="$HOME/.config/i3"
+DIRS["polybar"]="$HOME/.config/polybar"
+DIRS["qtile"]="$HOME/.config/qtile"
+DIRS["xmobar"]="$HOME/.config/xmobar"
+DIRS["xmonad"]="$HOME/.config/xmonad"
+
+for DIR in "${!DIRS[@]}"; do
+    TARGET="${DIRS[$DIR]}"
+    
+    if [ -e "$TARGET" ]; then
+        rm -rf "$TARGET"
+    fi
+    
+    ln -sf "$DOTFILES_DIR/$DIR" "$TARGET"
+    echo "Symlinked $DOTFILES_DIR/$DIR to $TARGET"
+done
+
+echo "All directories have been symlinked!"
+
