@@ -50,8 +50,8 @@
 ;(unpin! t)
 
 (package! tldr)
-(package! haskell-mode)
-(package! lsp-haskell)
+;;(package! haskell-mode)
+;;(package! lsp-haskell)
 (package! elcord)
 (package! beacon)
 (package! good-scroll)
