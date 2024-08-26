@@ -11,7 +11,7 @@
 
 (setq org-directory "~/org/")
 
-(setq doom-font (font-spec :family "Iosevka Fixed Medium" :size 15))
+;; (setq doom-font (font-spec :family "Iosevka Fixed Medium" :size 15))
 
 (beacon-mode 1)
 (good-scroll-mode 1)
