@@ -16,7 +16,8 @@ for DIR in "${!DIRS[@]}"; do
     TARGET="${DIRS[$DIR]}"
     
     if [ -e "$TARGET" ]; then
-        rm -rf "$TARGET"
+        echo "Warning: $TARGET already exists, skipping..."
+        continue
     fi
     
     ln -sf "$DOTFILES_DIR/$DIR" "$TARGET"
