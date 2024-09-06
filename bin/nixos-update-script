@@ -1,0 +1,27 @@
+#!/bin/sh
+
+REPO_PATH="$HOME/dotfiles"
+NIXOS_FOLDER="$REPO_PATH/nixos"
+
+# Show git diff
+cd $NIXOS_FOLDER
+git diff
+
+echo -e "\033[1mLast Commit Name:\033[0m $(git log -1 --pretty=format:'%s')"
+
+
+# Ask user if they want to continue
+if [[ $1 == "-sw" ]]; then
+  read -p "Do you want to continue? (y/n): " choice
+  if [[ $choice == "y" ]]; then
+    echo -e "\033[1m>>> sudo nixos-rebuild switch\033[0m"
+    sudo nixos-rebuild switch
+  else
+    echo "Operation cancelled."
+  fi
+else
+
+  echo -e "\033[1m>>> sudo nixos-rebuild dry-run\033[0m"
+  sudo nixos-rebuild dry-run
+fi
+

@@ -12,6 +12,8 @@ DIRS["qtile"]="$HOME/.config/qtile"
 DIRS["xmobar"]="$HOME/.config/xmobar"
 DIRS["xmonad"]="$HOME/.config/xmonad"
 
+DIRS["bin/nixos-update-script"]="$HOME/.local/bin/nixos-update-script"
+
 for DIR in "${!DIRS[@]}"; do
     TARGET="${DIRS[$DIR]}"
     
