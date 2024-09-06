@@ -31,6 +31,8 @@
     zip
 
     cmatrix
+
+    libreoffice-qt6-still
   ];
 }
 
