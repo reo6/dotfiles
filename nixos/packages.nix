@@ -26,6 +26,11 @@
     wine
     python312
     nerdfonts
+
+    qbittorrent
+    zip
+
+    cmatrix
   ];
 }
 
