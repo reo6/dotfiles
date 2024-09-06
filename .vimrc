@@ -1,7 +1,4 @@
 syntax on
-set tabstop=4
-set softtabstop=4
-set expandtab
 set autoindent
 set smartindent
 set copyindent
@@ -9,6 +6,10 @@ set smarttab
 set ai
 set si
 set wrap
+
+set expandtab
+set shiftwidth=4
+set tabstop=4
 
 set number
 
@@ -21,3 +22,10 @@ command W w
 command WQ wq
 command Q q
 set wildmenu
+
+filetype plugin on
+filetype indent on
+
+" :W sudo saves the file
+" (useful for handling the permission-denied error)
+command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
