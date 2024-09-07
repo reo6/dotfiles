@@ -33,6 +33,9 @@
     cmatrix
 
     libreoffice-qt6-still
+    rclone
+
+    vscode-fhs
   ];
 }
 
