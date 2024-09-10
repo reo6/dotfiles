@@ -12,6 +12,7 @@
     telegram-desktop
     element-desktop
     steam
+    homebank
     
     prismlauncher-unwrapped
     jdk17
@@ -37,6 +38,8 @@
     rclone
 
     vscode-fhs
+
+    openssl
   ];
 }
 
