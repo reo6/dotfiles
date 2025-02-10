@@ -18,5 +18,23 @@
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
   };
+  
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+
+    shellAliases = {
+      ll = "ls -l";
+      update = "sudo nixos-rebuild switch";
+    };
+
+    ohMyZsh = {
+      enable = true;
+      plugins = [ "git" ];
+      theme = "bira";
+    };
+
+  };
+
   };
 }
