@@ -26,31 +26,37 @@ myConfig =  def { terminal           = myTerminal
 
 myTerminal           = "alacritty"
 myModMask            = mod4Mask
-myBorderWidth        = 5
+myBorderWidth        = 2
 myEmacs              = "emacsclient -c -a 'emacs' "
 myBrowser            = "firefox"
+myWorkBrowser        = "firefox -P emre@mixrank.com"
 myTheme              = naturalGreenTheme
-myLauncher           = "rofi -show drun"
+myLauncher           = ".config/rofi/launchers/type-6/launcher.sh"
+myPowerMenu          = ".config/rofi/powermenu/type-6/powermenu.sh"
 myGapSize            = 13
 
 myStartupHook :: X ()
 myStartupHook = do
   spawn $     "/usr/bin/xmobar " ++ themeBarConfig myTheme
-  spawn $     "feh --bg-scale " ++ themeWallpaper myTheme
+  spawn $     "feh --bg-fill " ++ themeWallpaper myTheme
   spawn       "xscreensaver -no-splash"
   spawnOnce   "trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent true --tint 0x5f5f5f --height 31"
   spawn       "emacs --daemon"
+  spawn       "picom --experimental-backends"
 
 myKeybindings :: [(String, X())]
-myKeybindings = [  ("M-e", spawn myEmacs)
-                ,  ("M-f", spawn myBrowser)
+myKeybindings = [  ("M-S-e", spawn myEmacs)
+                ,  ("M-S-<F5>", spawn myWorkBrowser)
+                ,  ("M-S-f", spawn myBrowser)
+                ,  ("M-s", spawn "scrot -s - | xclip -selection clipboard -t image/png")
                 ,  ("<XF86MonBrightnessUp>", spawn "brightnessctl s +4%")
                 ,  ("<XF86MonBrightnessDown>", spawn "brightnessctl s 4%-")
                 ,  ("<XF86AudioRaiseVolume>", spawn "amixer -q sset Master 3%+")
                 ,  ("<XF86AudioLowerVolume>", spawn "amixer -q sset Master 3%-")
                 ,  ("M-<Return>", spawn myTerminal)
-                ,  ("M-q", spawn "xmonad --recompile; killall xmobar; xmonad --restart")
+                ,  ("M-q", spawn "xmonad --recompile; killall xmobar; killall picom; xmonad --restart")
                 ,  ("M-d", spawn myLauncher)
+                ,  ("M-S-d", spawn myPowerMenu)
                 ]
 
 myLayoutHook = tiled ||| Mirror tiled ||| Full
