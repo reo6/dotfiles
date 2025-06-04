@@ -12,6 +12,6 @@ naturalGreenTheme = Theme { themeName               = "Natural Green"
                           , themeBarConfig          = "~/.config/xmobar/natural-green-xmobarrc"
                           , themeBorderColor        = "#425F57"
                           , themeFocusedBorderColor = "#749F82"
-                          , themeWallpaper          = "/usr/share/backgrounds/gnome/brush-strokes-d.jpg"
+                          , themeWallpaper          = "/home/reo/Wallpapers/forest1.jpg"
                           , themeXmobarPP           = naturalGreenXmobarPP
                           }
