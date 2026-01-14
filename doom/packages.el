@@ -52,11 +52,11 @@
 (package! tldr)
 ;;(package! haskell-mode)
 ;;(package! lsp-haskell)
-(package! elcord)
+;(package! elcord)
 (package! beacon)
 (package! good-scroll)
 (package! sublime-themes)
 (package! color-theme-sanityinc-tomorrow)
 (package! jazz-theme)
 
-(package! aider :recipe (:host github :repo "tninja/aider.el" ))
+;(package! aider :recipe (:host github :repo "tninja/aider.el" ))

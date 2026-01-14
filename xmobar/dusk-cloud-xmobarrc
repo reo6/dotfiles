@@ -1,0 +1,9 @@
+Config { bgColor  = "#000000"
+       , fgColor  = "#C0C0C0"
+       , font     = "xft:BigBlueTermPlus Nerd Font-12"
+       , additionalFonts = []
+       , commands = [ Run Date "%a %Y-%m-%d <fc=#FFFFFF>%H:%M</fc>" "date" 10
+                    , Run XMonadLog
+                    ]
+       , alignSep = "}{"
+       , template = "    %XMonadLog% }{ %date%  "} 

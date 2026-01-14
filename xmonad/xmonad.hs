@@ -9,6 +9,8 @@ import XMonad.Layout.Spacing
 
 import Theme
 import NaturalGreenTheme
+import BlueLakeTheme
+import DuskCloudTheme
 
 main = do
   xmonad . ewmhFullscreen . ewmh . withEasySB (statusBarProp ("xmobar " ++ themeWallpaper myTheme) (pure $ themeXmobarPP myTheme)) defToggleStrutsKey $ myConfig
@@ -26,19 +28,20 @@ myConfig =  def { terminal           = myTerminal
 
 myTerminal           = "alacritty"
 myModMask            = mod4Mask
-myBorderWidth        = 2
+myBorderWidth        = 0
 myEmacs              = "emacsclient -c -a 'emacs' "
-myBrowser            = "firefox"
+myBrowser            = "vivaldi"
 myWorkBrowser        = "firefox -P emre@mixrank.com"
-myTheme              = naturalGreenTheme
+myTheme              = duskCloudTheme
 myLauncher           = ".config/rofi/launchers/type-6/launcher.sh"
 myPowerMenu          = ".config/rofi/powermenu/type-6/powermenu.sh"
 myGapSize            = 13
 
 myStartupHook :: X ()
 myStartupHook = do
+  spawn $     "dotfiles/primary-startup.sh"
   spawn $     "/usr/bin/xmobar " ++ themeBarConfig myTheme
-  spawn $     "feh --bg-fill " ++ themeWallpaper myTheme
+  spawn $     "feh --bg-scale " ++ themeWallpaper myTheme
   spawn       "xscreensaver -no-splash"
   spawnOnce   "trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent true --tint 0x5f5f5f --height 31"
   spawn       "emacs --daemon"
@@ -48,7 +51,7 @@ myKeybindings :: [(String, X())]
 myKeybindings = [  ("M-S-e", spawn myEmacs)
                 ,  ("M-S-<F5>", spawn myWorkBrowser)
                 ,  ("M-S-f", spawn myBrowser)
-                ,  ("M-s", spawn "scrot -s - | xclip -selection clipboard -t image/png")
+                ,  ("M-s", spawn "maim -s | xclip -selection clipboard -t image/png")
                 ,  ("<XF86MonBrightnessUp>", spawn "brightnessctl s +4%")
                 ,  ("<XF86MonBrightnessDown>", spawn "brightnessctl s 4%-")
                 ,  ("<XF86AudioRaiseVolume>", spawn "amixer -q sset Master 3%+")
@@ -57,6 +60,7 @@ myKeybindings = [  ("M-S-e", spawn myEmacs)
                 ,  ("M-q", spawn "xmonad --recompile; killall xmobar; killall picom; xmonad --restart")
                 ,  ("M-d", spawn myLauncher)
                 ,  ("M-S-d", spawn myPowerMenu)
+                ,  ("<Insert>", spawn "playerctl play-pause")
                 ]
 
 myLayoutHook = tiled ||| Mirror tiled ||| Full

@@ -5,13 +5,14 @@
 (load "doom-themes")
 
 ;; doom-henna, doom-nord, doom-one, doom-opera, doom-miramare, doom-manegarm
-(setq doom-theme 'doom-pine)
+(setq doom-theme 'doom-1337)
 
 (setq display-line-numbers-type 'relative)
 
 (setq org-directory "~/org/")
 
-(setq doom-font (font-spec :family "BigBlueTerm437 Nerd Font" :size 15))
+;;(setq doom-font (font-spec :family "ProFont IIx Nerd Font" :size 15))
+(setq doom-font (font-spec :family "Hack Nerd Font Mono" :size 14))
 
 (beacon-mode 1)
 (good-scroll-mode 1)
@@ -29,4 +30,7 @@
 (map! :leader
       :desc "Aider command" "a" #'aider-command)
 
-(set-frame-parameter nil 'alpha-background 50)
+(set-frame-parameter nil 'alpha-background 60)
+
+(after! evil
+  (add-to-list 'evil-keyword "_"))

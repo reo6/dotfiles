@@ -4,15 +4,15 @@
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 declare -A DIRS
-DIRS["alacritty"]="$HOME/.config/alacritty"
-DIRS["doom"]="$HOME/.config/doom"
-DIRS["i3"]="$HOME/.config/i3"
+#DIRS["alacritty"]="$HOME/.config/alacritty"
+#DIRS["doom"]="$HOME/.config/doom"
+#DIRS["i3"]="$HOME/.config/i3"
 DIRS["polybar"]="$HOME/.config/polybar"
-DIRS["qtile"]="$HOME/.config/qtile"
+#DIRS["qtile"]="$HOME/.config/qtile"
 DIRS["xmobar"]="$HOME/.config/xmobar"
 DIRS["xmonad"]="$HOME/.config/xmonad"
 
-DIRS["bin/nixos-update-script"]="$HOME/.local/bin/nixos-update-script"
+#DIRS["bin/nixos-update-script"]="$HOME/.local/bin/nixos-update-script"
 
 for DIR in "${!DIRS[@]}"; do
     TARGET="${DIRS[$DIR]}"
